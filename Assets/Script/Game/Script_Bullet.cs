@@ -13,16 +13,19 @@ public class Script_Bullet : MonoBehaviour
             if (target.name.Contains("Score"))
             {
                 Debug.Log("加点ターゲットに当たった");
+                Script_GameManager.AddScore(50);
             }
             //もし「Penalty」が入っていたら
             else if (target.name.Contains("Penalty"))
             {
                 Debug.Log("減点ターゲットに当たった");
+                Script_GameManager.PenaltyScore(100);
             }
             //もし「Time」が入っていたら
             else if (target.name.Contains("Time"))
             {
                 Debug.Log("時間ターゲットに当たった");
+                Script_GameManager.AddTime(2);
             }
             //念のため例外も
             else
